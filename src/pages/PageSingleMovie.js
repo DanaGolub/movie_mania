@@ -3,11 +3,14 @@ import { useParams } from 'react-router-dom';
 import IndivMovie from '../components/IndivMovie';
 //import Movies from '../components/Movies';
 import MovieCard from "../components/MovieCard";
+import AddingFavs from '../components/AddingFavs';
 import API_KEY from '../globals/globals';
 
-function PageAbout() {
+
+function PageSingleMovie() {
 
     const [movieData, setMovieData] = useState(null);
+    const [favourites, setFavourites] = useState([]);
 
     const { id } = useParams();
 
@@ -21,12 +24,19 @@ function PageAbout() {
         fetchMovies();
     }, [id])
 
+    const addFavMovie = (movie) => {
+        console.log(movie)
+        console.log("testing this")
+        const newFavList = [...favourites, movie]
+        setFavourites(newFavList)
+    }
+
     return (
         <section className="single-movie-page">
            {/* { movieData !== null &&  <h2>{movieData.title}</h2> } */}
-           {movieData !== null && <IndivMovie movie={movieData} key={movieData.id} />}
+           {movieData !== null && <IndivMovie movie={movieData} key={movieData.id} favouriteComponent={AddingFavs} handlingFavsClick={addFavMovie} selectedFavs={favourites}/>}
         </section>
     )
 }
 
-export default PageAbout
+export default PageSingleMovie
