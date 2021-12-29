@@ -6,12 +6,13 @@ import MovieCard from "../components/MovieCard";
 import AddingFavs from '../components/AddingFavs';
 import API_KEY from '../globals/globals';
 import Movies from '../components/Movies';
+// import { GlobalContext } from '../context/GlobalState';
 
 
 function PageSingleMovie() {
 
     const [movieData, setMovieData] = useState(null);
-    const [favourites, setFavourites] = useState([null]);
+    //const [favourites, setFavourites] = useState([null]);
 
     const { id } = useParams();
 
@@ -25,18 +26,17 @@ function PageSingleMovie() {
         fetchMovies();
     }, [id])
 
-    const addFavMovie = (movie) => {
-        const newFavList = [...favourites, movie]
-        setFavourites(newFavList)
-    }
+    // const addFavMovie = (movie) => {
+    //     const newFavList = [...favourites, movie]
+    //     setFavourites(newFavList)
+    // }
 
     return (
         <div>
         <section className="single-movie-page">
            {/* { movieData !== null &&  <h2>{movieData.title}</h2> } */}
-           {movieData !== null && <IndivMovie movie={movieData} key={movieData.id} favouriteComponent={AddingFavs} handlingFavsClick={addFavMovie}/>}
-           {/* {favourites !== null && <Movies moviesData={favourites} />} */}
-           {console.log(favourites)}
+           {/* {movieData !== null && <IndivMovie movie={movieData} key={movieData.id} favouriteComponent={AddingFavs} handlingFavsClick={addFavMovie}/>} */}
+           {movieData !== null && <IndivMovie movie={movieData} key={movieData.id} favouriteComponent={AddingFavs}/>}
         </section>
         </div>
     )

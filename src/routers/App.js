@@ -5,10 +5,12 @@ import Footer from "../components/Footer";
 import PageHome from "../pages/PageHome";
 import PageAbout from "../pages/PageAbout";
 import PageFavs from "../pages/PageFavs";
-import PageSingleMovie from '../pages/PageSingleMovie'
+import PageSingleMovie from '../pages/PageSingleMovie';
+import {GlobalProvider} from '../context/GlobalState';
 
 function App() {
   return (
+    <GlobalProvider>
     <BrowserRouter>
       <div className="wrapper">
         <Header />
@@ -23,6 +25,7 @@ function App() {
         <Footer />
       </div>
     </BrowserRouter>
+    </GlobalProvider>
   );
 }
 
