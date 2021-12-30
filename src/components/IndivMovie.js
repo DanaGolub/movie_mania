@@ -9,7 +9,11 @@ import { GlobalContext } from '../context/GlobalState';
 function IndivMovie({ movie, favouriteComponent, handlingFavsClick }) {
 
     const FavComponent = favouriteComponent;
-    const { addMovieToFavs } = useContext(GlobalContext); 
+    const { addMovieToFavs, removeMovieFromFavs, favourites } = useContext(GlobalContext); 
+
+    let storedFavMovie = favourites.find(movieObj => movieObj.id === movie.id);
+    console.log(storedFavMovie)
+
 
     return (
         <div className="movie-card">
@@ -20,6 +24,7 @@ function IndivMovie({ movie, favouriteComponent, handlingFavsClick }) {
                 }
             </div>
             {/* <div onClick={() => handlingFavsClick(movie)} className='movie-info'> */}
+            {/* <div onClick={ storedFavMovie.title !== movie.title ? () => addMovieToFavs(movie) : removeMovieFromFavs(movie)} className='movie-info'> */}
             <div onClick={() => addMovieToFavs(movie)} className='movie-info'>
                 <h3>{movie.title}</h3>
                 <h3>{movie.release_date}</h3>
