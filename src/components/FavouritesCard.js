@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
-//import noPoster from '../images/no-movie-poster.jpg';
-//import gkPoster from '../images/godzilla-vs-kong-demo-poster.jpg'
 import noPoster from '../images/no-movie-poster.jpg';
-function MovieCard({ movie }) {
+
+function FavouritesCard({ movie }) {
     return (
         <div className="movie-card">
             <div className="movie-poster">
@@ -13,13 +12,12 @@ function MovieCard({ movie }) {
             </div>
             <div className='movie-info'>
                 <h3>{movie.title}</h3>
-                {/* <h3>{movie.release_date}</h3>
+                <h3>{movie.release_date}</h3>
                 <h3>{movie.vote_average}</h3>
-                <h3>{movie.overview}</h3> */}
                 <Link to={`movie/${movie.id}`}>More Info</Link>
             </div>
         </div>
     )
 }
 
-export default MovieCard
+export default FavouritesCard
