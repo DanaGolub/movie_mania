@@ -10,9 +10,10 @@ import RemovingFavs from './RemovingFavs';
 function IndivMovie({ movie, favouriteComponent, handlingFavsClick }) {
 
     const FavComponent = favouriteComponent;
-    const { addMovieToFavs, removeMovieFromFavs, favourites } = useContext(GlobalContext); 
+    // const { addMovieToFavs, removeMovieFromFavs, favourites } = useContext(GlobalContext); 
 
-    let storedFavMovie = favourites.find(movieObj => movieObj.id === movie.id);
+    // let storedFavMovie = favourites.find(movieObj => movieObj.id === movie.id);
+
     //const addOrRemoveFavs = storedFavMovie ? true : false;
     // console.log(movie.id)
     // console.log(storedFavMovie.id)
@@ -26,29 +27,16 @@ function IndivMovie({ movie, favouriteComponent, handlingFavsClick }) {
                     <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
                 }
             </div>
-            {/* <div onClick={() => handlingFavsClick(movie)} className='movie-info'> */}
-            {!storedFavMovie ? (
-            <div onClick={() => addMovieToFavs(movie)} className='movie-info'>
+            <div onClick={() => handlingFavsClick(movie)} className='movie-info'>
                 <h3>{movie.title}</h3>
                 <h3>{movie.release_date}</h3>
                 <h3>{movie.vote_average}</h3>
                 <h3>{movie.overview}</h3>
                 <FavComponent />
+                {/* <AddingFavs /> */}
             </div>
-            ) 
-            : 
-            (
-                <div onClick={() => removeMovieFromFavs(movie)} className='movie-info'>
-                <h3>{movie.title}</h3>
-                <h3>{movie.release_date}</h3>
-                <h3>{movie.vote_average}</h3>
-                <h3>{movie.overview}</h3>
-                <RemovingFavs />
-            </div>
-            )
-}
         </div>
     )
 }
-
+    
 export default IndivMovie
