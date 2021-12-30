@@ -8,8 +8,10 @@ export default (state, action) => {
             };
 
         case 'REMOVE_MOVIE_FROM_FAVOURITES':
-            const updatedFavourites = state.favourites.filter(movieObj => movieObj.id !== action.payload);
-            return updatedFavourites;
+            return {
+                ...state,
+                favourites: state.favourites.filter(movie => movie.id !== action.payload)
+            };
 
         default:
             return state;
