@@ -1,4 +1,4 @@
-import {useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import IndivMovie from '../components/IndivMovie';
 import MovieCard from "../components/MovieCard";
@@ -10,7 +10,7 @@ import { GlobalContext } from '../context/GlobalState';
 
 
 function PageSingleMovie() {
-    const {favourites } = useContext(GlobalContext); 
+    //const { favourites } = useContext(GlobalContext);
 
     const [movieData, setMovieData] = useState(null);
     //const [storedFavMovie, setStoredFavMovie] = useState(null);
@@ -31,14 +31,14 @@ function PageSingleMovie() {
 
     return (
         <div>
-        <section className="single-movie-page">
-           {movieData !== null && 
-           <IndivMovie 
-           movie={movieData} 
-           key={movieData.id} 
-           />
-           }
-        </section>
+            <section className="single-movie-page">
+                {movieData !== null &&
+                    <IndivMovie
+                        movie={movieData}
+                        key={movieData.id}
+                    />
+                }
+            </section>
         </div>
     )
 }
