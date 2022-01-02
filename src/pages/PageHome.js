@@ -5,6 +5,7 @@ import API_KEY from '../globals/globals';
 function PageHome() {
 
     const [moviesData, setMovieData] = useState(null);
+    const [chosenMovCategory, setChosenMovCategory] = useState('popular');
 
     var sortMoviesBy = ["Popular", "Top Rated", "Now Playing", "Upcoming"]
     
@@ -13,32 +14,30 @@ function PageHome() {
         let selectedOption = e.target.elements.movies.value
 
         console.log(selectedOption)
-        // if (selectedOption === "Popular") {
-        //     console.log("Popular")
-        // }
-        // else if (selectedOption === "Top Rated") {
-        //     console.log("top movies")
-        // }
-        // else if (selectedOption === "Now Playing") {
-        //     console.log("Now Playing")
-        // }
-        // else if (selectedOption === "Upcoming") {
-        //     console.log("Upcoming")
-        // }
+        if (selectedOption === "Popular") {
+            setChosenMovCategory('popular')
+        }
+        else if (selectedOption === "Top Rated") {
+            setChosenMovCategory('top_rated')
+        }
+        else if (selectedOption === "Now Playing") {
+            setChosenMovCategory('now_playing')
+        }
+        else if (selectedOption === "Upcoming") {
+            setChosenMovCategory('upcoming')
+        }
     }
-
 
 
     useEffect(() => {
         const fetchMovies = async () => {
-            const res = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`);
+            const res = await fetch(`https://api.themoviedb.org/3/movie/${chosenMovCategory}?api_key=${API_KEY}&language=en-US&page=1`);
             const data = await res.json();
             const first12Movies = data.results.splice(0, 12);
-            //console.log(first12Movies);
             setMovieData(first12Movies);
         }
         fetchMovies();
-    }, [])
+    }, [chosenMovCategory])
 
     return (
         <section className="home-page">
@@ -52,10 +51,7 @@ function PageHome() {
                     <button type="submit">Choose</button>
                 </form>
             </section>
-
             {moviesData !== null && <Movies moviesData={moviesData} />}
-            {/* or */}
-            {/* { movieData !== null ? <Movies/> : <p>Fetching Movies...</p>} */}
         </section>
     )
 }
