@@ -6,11 +6,10 @@ import AddingFavs from '../components/AddingFavs';
 import API_KEY from '../globals/globals';
 import Movies from '../components/Movies';
 import RemovingFavs from '../components/RemovingFavs';
-import { GlobalContext } from '../context/GlobalState';
 
 
 function PageSingleMovie() {
-    //const { favourites } = useContext(GlobalContext);
+
 
     const [movieData, setMovieData] = useState(null);
     //const [storedFavMovie, setStoredFavMovie] = useState(null);
