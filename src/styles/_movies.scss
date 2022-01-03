@@ -25,7 +25,9 @@
 
     img {
         width: 100%;
+        max-width: 300px;
         border-radius: em(4);
+        justify-self: center;
     }
 
     @include mq($tablet){
@@ -33,16 +35,17 @@
     }
 }
 
-.indiv-movie-poster {
+.indiv-movie {
     position: relative;
     transition: transform 0.2s;
+    justify-self: center;
 
 }
 // .indiv-movie-poster:hover {
 //     cursor: pointer;
 //     transform: scale(1.1);
 // }
-.indiv-movie-poster:hover .overlay {
+.indiv-movie:hover .overlay {
     opacity: 1;
 }
 
@@ -57,4 +60,11 @@
     padding: 20px;
     text-align: center;
     font-family: "Sarabun", sans-serif;
+}
+
+.movie-poster {
+    // max-width: 300px;
+    background-color: black;
+    justify-content: center;
+    text-align: center;
 }

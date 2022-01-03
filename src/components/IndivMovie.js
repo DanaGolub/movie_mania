@@ -19,13 +19,13 @@ function IndivMovie({ movie, favouriteComponent }) {
 
     return (
         <div className="movie-card">
-            <div className="indiv-movie-poster">
+            <div className="indiv-movie">
+                <div className="movie-poster">
                 {movie.poster_path === null ?
                     <img src={noPoster} alt="No Poster" /> :
                     <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
                 }
-
-
+                </div>
                 {!storedFavMovie ? (
                     <div onClick={() => addMovieToFavs(movie)} className='movie-info'>
                         <h3>{movie.title}</h3>
@@ -35,7 +35,6 @@ function IndivMovie({ movie, favouriteComponent }) {
                         <div className="overlay d-flex align-items-center justify-content-bottom">
                             <AddingFavs />
                         </div>
-
                     </div>
                 )
                     :
