@@ -32,3 +32,29 @@
         margin-bottom: 0;
     }
 }
+
+.indiv-movie-poster {
+    position: relative;
+    transition: transform 0.2s;
+
+}
+// .indiv-movie-poster:hover {
+//     cursor: pointer;
+//     transform: scale(1.1);
+// }
+.indiv-movie-poster:hover .overlay {
+    opacity: 1;
+}
+
+.overlay {
+    // position: absolute;
+    background: transparent;
+    width: 100%;
+    transition: 0.5s ease;
+    opacity: 0;
+    bottom: 0;
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+    font-family: "Sarabun", sans-serif;
+}
