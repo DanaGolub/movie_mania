@@ -18,6 +18,7 @@ function App() {
           <Routes>
             <Route path="/" element={<PageHome />} />
             <Route path="/movie/:id" element={<PageSingleMovie />} />
+            <Route path="/favs/movie/:id" element={<PageSingleMovie />} />
             <Route path="/about" element={<PageAbout />} />
             <Route path="/favs" element={<PageFavs />} />
           </Routes>
