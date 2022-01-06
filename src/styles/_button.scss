@@ -1,40 +1,13 @@
 // button
 
-// button, .button-favs, .favs-overlay {
-//     //background-color: #4CAF50; /* Green */
-//     //border: black;
-//     //color: white;
-//     padding: 10px;
-//     margin-top: 10px;
-//     text-align: center;
-//     text-decoration: none;
-//     display: inline-block;
-//     font-size: 16px;
-//     margin: 4px 2px;
-//     cursor: pointer;
-//   }
+
 .button-favs {
     color: black;
   }
   
 .favs-overlay:hover {
-    //background-color: grey;
     color: white;
   }
-
-  // .btn-remove-favs {
-  //   // background-color: white; 
-  //   background-color: transparent; 
-  //   border: none;
-  //   color: grayscale($color: #161313);
-  //   // padding: 15px 32px;
-  //   font-weight: bolder;
-  //   text-align: center;
-  //   text-decoration: none;
-  //   display: inline-block;
-  //   font-size: 0.9em;
-  //   font-family: "Sarabun", sans-serif;
-  // }
 
   .btn-remove-favs {
     margin: 0.4em 0;
@@ -42,7 +15,16 @@
     text-align: center;
   }
 
-  .btn-remove-favs:hover {
-    opacity: 0.5;
+  // .btn-remove-favs:hover {
+  //   opacity: 0.5;
+  // }
+
+  .dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
   }
 

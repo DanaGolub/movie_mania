@@ -40,11 +40,11 @@ function PageHome() {
     }, [chosenMovCategory])
 
     return (
-        <section className="home-page">
-            <section>
+        <section >
+            <section className="categ-form" >
                 <form action="/" onClick={choosingSortMoviesBy}>
-                    <label htmlFor="movies">Movies </label>
-                    <select name="movies" id="movies">
+                    <label htmlFor="movies">Show Me</label>
+                    <select className="each-item-drop" name="movies" id="movies">
                         {sortMoviesBy.map((movie, i) => <option key={i}>{movie}</option>)}
                     </select>
                 </form>
@@ -55,3 +55,4 @@ function PageHome() {
 }
 
 export default PageHome
+

@@ -13,8 +13,8 @@
         grid-template-columns: 1fr 1fr 1fr;
         gap: em(18);
     }
-
 }
+
 
 .movie-card {
     background-color: rgba(black, 0.3);
@@ -22,6 +22,7 @@
     padding: em(10);
     margin-bottom: em(16);
     border-radius: em(8);
+    // justify-content: center;
 
     img {
         width: 100%;
@@ -29,6 +30,10 @@
         max-width: 300px;
         border-radius: em(4);
         justify-self: center;
+        display: block;
+        position: static;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     @include mq($tablet){
@@ -42,21 +47,17 @@
     justify-self: center;
 
 }
-// .indiv-movie-poster:hover {
-//     cursor: pointer;
-//     transform: scale(1.1);
+
+// .indiv-movie:hover .overlay {
+//     opacity: 1;
 // }
-.indiv-movie:hover .overlay {
-    opacity: 1;
-}
 
 .overlay {
-    // position: absolute;
     background: transparent;
     width: 100%;
-    transition: 0.5s ease;
-    opacity: 0;
-    bottom: 0;
+    // transition: 0.5s ease;
+    // opacity: 0;
+    // bottom: 0;
     font-size: 20px;
     padding: 20px;
     text-align: center;
@@ -64,8 +65,45 @@
 }
 
 .movie-poster {
-    // max-width: 300px;
     background-color: black;
-    justify-content: center;
+}
+
+.categ-form form {
+    margin: 1.25em;
+}
+
+.categ-form form select { 
+    background-color: rgba(146, 137, 137, 0.274);
+    color: white;
+    font-size: 1em;
+    height: 2.5em;
+    padding-left: 5px;
+    justify-self: center;
     text-align: center;
+}
+
+.categ-form label {
+    margin-right: 0.75em;
+}
+
+.movie-info h2 {
+    color: rgb(130, 177, 92);
+}
+
+.rating {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.rating .vote-avg {
+    margin: 0 0 2px 10px;
+    font-family: "Sarabun", sans-serif;
+    font-size: 1.5em;
+    
+}
+
+.react-stars span{
+    position: relative;
+    // top: -4px;
 }
