@@ -3,10 +3,19 @@ import noPoster from '../images/no-movie-poster.jpg';
 import RemovingFavs from './RemovingFavs';
 import { GlobalContext } from '../context/GlobalState';
 import React, { useState, useContext } from 'react';
+import ReactStars from 'react-rating-stars-component';
 
 
 
 function FavouritesCard({ movie }) {
+
+    const starImplementation = {
+        count: 10,
+        size: 24,
+        edit: false,
+        value: movie.vote_average
+    }
+
     const { addMovieToFavs, removeMovieFromFavs, favourites } = useContext(GlobalContext);
     return (
         <div className="movie-card">
@@ -32,10 +41,19 @@ function FavouritesCard({ movie }) {
                     </svg>
                 </div>
 
-                <h3>{movie.title}</h3>
+                <div className='movie-info'>
+                <h1>{movie.title}</h1>
+                <h2>Release Date</h2>
                 <h3>{movie.release_date}</h3>
-                <h3>{movie.vote_average}</h3>
+                <h2>Rating</h2>
+                <div className='rating'>
+                    <ReactStars {...starImplementation} />
+                    <span className='vote-avg'> {movie.vote_average}</span>
+                </div>
+                <h2>Overview</h2>
+                <h3>{movie.overview}</h3>
                 <Link to={`movie/${movie.id}`}>More Info</Link>
+            </div>
 
             </div>
         </div>

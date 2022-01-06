@@ -2,7 +2,17 @@ import { Link } from 'react-router-dom';
 //import noPoster from '../images/no-movie-poster.jpg';
 //import gkPoster from '../images/godzilla-vs-kong-demo-poster.jpg'
 import noPoster from '../images/no-movie-poster.jpg';
+import ReactStars from 'react-rating-stars-component';
+
 function MovieCard({ movie }) {
+
+    const starImplementation = {
+        count: 10,
+        size: 24,
+        edit: false,
+        value: movie.vote_average
+    }
+
     return (
         <div className="movie-card">
             <div className="movie-poster">
@@ -12,10 +22,16 @@ function MovieCard({ movie }) {
                 }
             </div>
             <div className='movie-info'>
-                <h3>{movie.title}</h3>
-                {/* <h3>{movie.release_date}</h3>
-                <h3>{movie.vote_average}</h3>
-                <h3>{movie.overview}</h3> */}
+                <h1>{movie.title}</h1>
+                <h2>Release Date</h2>
+                <h3>{movie.release_date}</h3>
+                <h2>Rating</h2>
+                <div className='rating'>
+                    <ReactStars {...starImplementation} />
+                    <span className='vote-avg'> {movie.vote_average}</span>
+                </div>
+                <h2>Overview</h2>
+                <h3>{movie.overview}</h3>
                 <Link to={`movie/${movie.id}`}>More Info</Link>
             </div>
         </div>

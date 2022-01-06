@@ -24,7 +24,7 @@ function IndivMovie({ movie, favouriteComponent }) {
         value: movie.vote_average
     }
 
-    const movieAveragePercent = movie.vote_average * 10
+    // const movieAveragePercent = movie.vote_average * 10
 
     return (
         <div className="movie-card">
