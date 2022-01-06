@@ -21,3 +21,28 @@
     //background-color: grey;
     color: white;
   }
+
+  // .btn-remove-favs {
+  //   // background-color: white; 
+  //   background-color: transparent; 
+  //   border: none;
+  //   color: grayscale($color: #161313);
+  //   // padding: 15px 32px;
+  //   font-weight: bolder;
+  //   text-align: center;
+  //   text-decoration: none;
+  //   display: inline-block;
+  //   font-size: 0.9em;
+  //   font-family: "Sarabun", sans-serif;
+  // }
+
+  .btn-remove-favs {
+    margin: 0.4em 0;
+    justify-self: center;
+    text-align: center;
+  }
+
+  .btn-remove-favs:hover {
+    opacity: 0.5;
+  }
+

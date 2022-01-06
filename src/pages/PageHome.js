@@ -11,9 +11,9 @@ function PageHome() {
     
     function choosingSortMoviesBy(e) {
         e.preventDefault();
-        let selectedOption = e.target.elements.movies.value
+        let selectedOption = e.target.value
 
-        console.log(selectedOption)
+
         if (selectedOption === "Popular") {
             setChosenMovCategory('popular')
         }
@@ -42,13 +42,11 @@ function PageHome() {
     return (
         <section className="home-page">
             <section>
-                <form action="/" onSubmit={choosingSortMoviesBy}>
-                    <label htmlFor="movies">Products: </label>
+                <form action="/" onClick={choosingSortMoviesBy}>
+                    <label htmlFor="movies">Movies </label>
                     <select name="movies" id="movies">
                         {sortMoviesBy.map((movie, i) => <option key={i}>{movie}</option>)}
                     </select>
-                    <br />
-                    <button type="submit">Choose</button>
                 </form>
             </section>
             {moviesData !== null && <Movies moviesData={moviesData} />}

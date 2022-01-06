@@ -27,24 +27,24 @@ function IndivMovie({ movie, favouriteComponent }) {
                 }
                 </div>
                 {!storedFavMovie ? (
-                    <div onClick={() => addMovieToFavs(movie)} className='movie-info'>
+                    <div className='movie-info'>
                         <h3>{movie.title}</h3>
                         <h3>{movie.release_date}</h3>
                         <h3>{movie.vote_average}</h3>
                         <h3>{movie.overview}</h3>
-                        <div className="overlay d-flex align-items-center justify-content-bottom">
+                        <div className="overlay d-flex align-items-center justify-content-bottom" onClick={() => addMovieToFavs(movie)} >
                             <AddingFavs />
                         </div>
                     </div>
                 )
                     :
                     (
-                        <div onClick={() => removeMovieFromFavs(movie)} className='movie-info'>
+                        <div className='movie-info'>
                             <h3>{movie.title}</h3>
                             <h3>{movie.release_date}</h3>
                             <h3>{movie.vote_average}</h3>
                             <h3>{movie.overview}</h3>
-                            <div className="overlay d-flex align-items-center justify-content-center">
+                            <div className="overlay d-flex align-items-center justify-content-center"  onClick={() => removeMovieFromFavs(movie)}>
                                 <RemovingFavs />
                             </div>
                         </div>
