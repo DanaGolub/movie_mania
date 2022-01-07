@@ -20,9 +20,9 @@
     background-color: rgba(black, 0.3);
     border: em(3) solid $textColor;
     padding: em(10);
+    margin-top: em(16);
     margin-bottom: em(16);
     border-radius: em(8);
-    // justify-content: center;
 
     img {
         width: 100%;
@@ -104,3 +104,4 @@
 .moviedb-img {
     width: 5em;
 }
+
