@@ -83,9 +83,12 @@
     color: rgb(130, 177, 92);
 }
 
+.overview h3 {
+    margin-top: -0.5em;
+}
 .rating {
-    margin-top: -1.5em;
-    margin-bottom: 1.5em;
+    margin-top: -1em;
+    margin-bottom: 1em;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -98,6 +101,10 @@
     
 }
 
+.release-date h3{
+     margin-top: -0.5em;
+    // margin-bottom: 1em;
+}
 .react-stars span{
     position: relative;
     // top: -4px;

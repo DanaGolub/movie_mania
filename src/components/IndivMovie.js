@@ -11,11 +11,9 @@ import { render } from "react-dom";
 
 function IndivMovie({ movie, favouriteComponent }) {
 
-    // const FavComponent = favouriteComponent;
     const { addMovieToFavs, removeMovieFromFavs, favourites } = useContext(GlobalContext);
 
     let storedFavMovie = favourites.find(movieObj => movieObj.id === movie.id);
-    // let disableButton = storedFavMovie ? true : false;
 
     const starImplementation = {
         count: 10,
@@ -23,8 +21,6 @@ function IndivMovie({ movie, favouriteComponent }) {
         edit: false,
         value: movie.vote_average
     }
-
-    // const movieAveragePercent = movie.vote_average * 10
 
     return (
         <div className="movie-card">
