@@ -48,16 +48,9 @@
 
 }
 
-// .indiv-movie:hover .overlay {
-//     opacity: 1;
-// }
-
 .overlay {
     background: transparent;
     width: 100%;
-    // transition: 0.5s ease;
-    // opacity: 0;
-    // bottom: 0;
     font-size: 20px;
     padding: 20px;
     text-align: center;
@@ -106,4 +99,8 @@
 .react-stars span{
     position: relative;
     // top: -4px;
+}
+
+.moviedb-img {
+    width: 5em;
 }
