@@ -1,8 +1,4 @@
-// Page - Not Found
-
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { appTitle } from '../globals/globals';
 
 function PageNotFound () {
 

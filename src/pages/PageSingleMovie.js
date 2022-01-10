@@ -1,21 +1,14 @@
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import IndivMovie from '../components/IndivMovie';
-import MovieCard from "../components/MovieCard";
-import AddingFavs from '../components/AddingFavs';
 import API_KEY from '../globals/globals';
-import Movies from '../components/Movies';
-import RemovingFavs from '../components/RemovingFavs';
+
 
 
 function PageSingleMovie() {
 
-
     const [movieData, setMovieData] = useState(null);
-    //const [storedFavMovie, setStoredFavMovie] = useState(null);
-
     const { id } = useParams();
-
 
     useEffect(() => {
         const fetchMovies = async () => {

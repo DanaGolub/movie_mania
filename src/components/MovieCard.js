@@ -1,6 +1,4 @@
 import { Link } from 'react-router-dom';
-//import noPoster from '../images/no-movie-poster.jpg';
-//import gkPoster from '../images/godzilla-vs-kong-demo-poster.jpg'
 import noPoster from '../images/no-movie-poster.jpg';
 import ReactStars from 'react-rating-stars-component';
 

@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
 import noPoster from '../images/no-movie-poster.jpg';
-import RemovingFavs from './RemovingFavs';
 import { GlobalContext } from '../context/GlobalState';
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import ReactStars from 'react-rating-stars-component';
 
 

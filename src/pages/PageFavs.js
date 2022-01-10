@@ -1,8 +1,4 @@
-import { useState, useEffect, useContext } from 'react';
-import AddingFavs from '../components/AddingFavs';
-import IndivMovie from '../components/IndivMovie';
-import MovieCard from '../components/MovieCard';
-import PageSingleMovie from './PageSingleMovie';
+import { useContext } from 'react';
 import FavouritesCard from '../components/FavouritesCard';
 import { GlobalContext } from '../context/GlobalState';
 
